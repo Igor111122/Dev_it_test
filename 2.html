@@ -1,0 +1,102 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>CSS Grid Layout</title>
+    <style>body, html {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .container {
+        display: grid;
+        grid-template-areas:
+            "header header"
+            "navigation navigation"
+            "content sidebar"
+            "footer footer";
+        grid-template-rows: 10% 5% 75% 10%;
+        grid-template-columns: 60% 40%;
+        height: 100%;
+    }
+    
+    .header {
+        grid-area: header;
+        background-color: #3498db;
+        color: white;
+    }
+    
+    .navigation {
+        grid-area: navigation;
+        background-color: #e74c3c;
+        color: white;
+    }
+    
+    .content {
+        grid-area: content;
+        background-color: #2ecc71;
+    }
+    
+    .sidebar {
+        grid-area: sidebar;
+        background-color: #f1c40f;
+    }
+    
+    .footer {
+        grid-area: footer;
+        background-color: #34495e;
+        color: white;
+    }
+    /* Добавляем стили для контейнера анимации */
+    .animation-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+    
+    /* Создаем анимированный квадрат */
+    .animated-square {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        animation: rotateColor 5s linear infinite;
+    }
+    
+    /* Создаем ключевую анимацию rotateColor */
+    @keyframes rotateColor {
+        0% {
+            transform: rotate(0deg);
+            background-color: red;
+        }
+        50% {
+            transform: rotate(180deg);
+            background-color: orange;
+        }
+        100% {
+            transform: rotate(360deg);
+            background-color: green;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">Header</header>
+        <nav class="navigation">Navigation</nav>
+        <main class="content">Content</main>
+        <aside class="sidebar">Sidebar</aside>
+        <footer class="footer">Footer</footer>
+    </div>
+  <div class="animation-container">
+    <div class="animated-square"></div>
+</div>
+</body>
+</html>

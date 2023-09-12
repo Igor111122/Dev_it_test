@@ -1,0 +1,65 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Flexbox Layout</title>
+    <style>body {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        margin: 0;
+    }
+    
+    header,
+    footer {
+        flex: 1;
+        background-color: lightblue;
+    }
+    
+    nav {
+        flex: 0.5;
+        background-color: lightgray;
+    }
+    
+    .main-content {
+        display: flex;
+        flex: 4;
+    }
+    
+    .content {
+        flex: 0.6;
+        background-color: lightgreen;
+        animation: spinAndChangeColor 4s linear infinite;
+    }
+    
+    @keyframes spinAndChangeColor {
+        0% {
+            transform: rotate(0deg);
+            background-color: red;
+        }
+        50% {
+            transform: rotate(180deg);
+            background-color: orange;
+        }
+        100% {
+            transform: rotate(360deg);
+            background-color: green;
+        }
+    }
+    .sidebar {
+        flex: 0.4;
+        background-color: lightcoral;
+    }
+    </style>
+</head>
+<body>
+    <header>Header</header>
+    <nav>Navigation</nav>
+    <div class="main-content">
+        <div class="content">Content</div>
+        <div class="sidebar">Sidebar</div>
+    </div>
+    <footer>Footer</footer>
+</body>
+</html>
